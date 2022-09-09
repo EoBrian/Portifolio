@@ -1,5 +1,9 @@
-nav a {
+a {
   font-size: 1.3em;
+}
+
+nav a {
+  
   color: #fff;
   padding: 10px;
   border-radius: 10px;
@@ -9,4 +13,10 @@ nav a:hover {
   background-color: #fff;
   color: var(--color-secundary);
   transition: .5s;
+}
+
+.logo {
+  font-weight: 600;
+  margin-left: 10px;
+  color: var(--c-contrast-two);
 }

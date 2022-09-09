@@ -6,8 +6,8 @@ import {Link, NavLink} from "react-router-dom"
 const MenuApp = () => {
   return (
     <>
-      <div className="logo">
-        <Link to="/">Portifólio</Link>
+      <div>
+        <Link className="logo" to="/">Portifólio</Link>
       </div>
       <nav>
         <ul className="flex">

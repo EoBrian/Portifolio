@@ -15,8 +15,8 @@ import {
 import MenuApp from './components/MenuApp'
 
 //pages
-import Home from './pages/Home'
-import Contact from './pages/Contact'
+import Home from './pages/Home/Home'
+import Contact from './pages/Contact/Contact'
 import NotFound from './pages/NotFound'
 
 
@@ -30,13 +30,13 @@ function App() {
           <MenuApp/>
         </header>
 
-        <article className="container">
+        <section className="container">
           <Routes>
             <Route path='/' element={<Home/>}/>
             <Route path='/contact-me' element={<Contact/>}/>
             <Route path='*' element={<NotFound/>}/>
           </Routes>
-        </article>
+        </section>
       </Router>
     </>
   )
