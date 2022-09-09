@@ -1,0 +1,7 @@
+.menu-app {
+  min-height: 70px;
+  background-color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
