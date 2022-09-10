@@ -14,10 +14,12 @@ const Home = () => {
       
       <div className="about-me">
       
-        <figure>
-          <img width="100%" src={Me} alt="I - Brian Ferreira" />
+        <div>
           <div className="animation"></div>
-        </figure>
+          <figure>
+            <img width="100%" src={Me} alt="I - Brian Ferreira" />     
+          </figure>
+        </div>
         
         <div>
           <div>

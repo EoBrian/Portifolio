@@ -23,12 +23,18 @@
 }
 
 .card .about-me figure {
-  max-width: 500px;
+  max-width: 400px;
+  background-color: rgba(0, 0, 0, 0.452);
+  overflow: hidden;
+}
+
+.card .about-me figure img {
+  opacity: .7;
 }
 
 
 .card .about-me figure, .card .about-me figure img {
-  border-radius: 50%;
+  border-radius: 50% 50% 50% 10px;
   animation: BollUp 5s reverse infinite;
 }
 

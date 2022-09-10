@@ -19,13 +19,13 @@
   list-style-type: none;
 }
 
-html, body, .root {
+html, body, .container {
   height: 100%;
   font-family: "Oswald", sans-serif;
   font-size: 16px;
   color: #fff;
-  background: linear-gradient(90deg, #0c0c0c, var(--color-secundary)) no-repeat center;
-  background-size: cover;
+  background: linear-gradient(90deg, #0c0c0c, var(--color-secundary)) no-repeat;
+  background-size: 100%;
 }
 
 body:has(input[type=checkbox]:checked) {
