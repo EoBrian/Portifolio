@@ -8,7 +8,6 @@ const MenuApp = () => {
     <>
       <div>
         <Link className="logo" to="/">Portifólio</Link>
-        <input type="checkbox" />
       </div>
       <nav>
         <ul className="flex">

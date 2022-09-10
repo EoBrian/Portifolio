@@ -28,13 +28,8 @@ html, body, .container {
   background-size: 100%;
 }
 
-body:has(input[type=checkbox]:checked) {
-  background-image: linear-gradient(90deg, #FFF, var(--color-secundary));
-  color: #000;
-}
-
 a.active {
-  background-color: var(--color-secundary);
+  background-color: var(--color-primary);
   color: #fff;
 }
 
@@ -45,6 +40,12 @@ a.active {
   cursor: pointer;
   background-color: var(--color-primary);
   color: #fff;
+}
+
+.btn:hover, nav a:hover {
+  background-color: #fff;
+  color: var(--color-primary);
+  transition: .5s;
 }
 
 .flex {
