@@ -16,6 +16,7 @@ const Home = () => {
       
         <figure>
           <img width="100%" src={Me} alt="I - Brian Ferreira" />
+          <div className="animation"></div>
         </figure>
         
         <div>
@@ -25,7 +26,7 @@ const Home = () => {
           </div>
 
           <div className="skills">
-            <h2>Habilidades:</h2>
+            <h2>Habilidades</h2>
             <ul>
               <li>HTML5</li>
               <li>CSS</li>
@@ -41,9 +42,6 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="animation">
-          <span className="circle"></span>
-        </div>
       </div>
       
     </article>

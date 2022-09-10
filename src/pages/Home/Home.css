@@ -29,6 +29,7 @@
 
 .card .about-me figure, .card .about-me figure img {
   border-radius: 50%;
+  animation: BollUp 5s reverse infinite;
 }
 
 .card .about-me .skills ul{
@@ -46,7 +47,7 @@
 
 .animation {
   position: absolute;
-  top: 30px;
+  top: 0;
   right: 30px;
   height: 50px;
   width: 50px;
@@ -60,7 +61,7 @@
     
   }
   50% {
-    transform: translateY(-20px);
+    transform: translateY(-10px);
   }
   100% {
 
