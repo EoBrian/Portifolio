@@ -3,7 +3,6 @@ a {
 }
 
 nav a {
-  
   color: #fff;
   padding: 10px;
   border-radius: 10px;
@@ -18,5 +17,5 @@ nav a:hover {
 .logo {
   font-weight: 600;
   margin-left: 10px;
-  color: var(--c-contrast-two);
+  color: var(--c-contrast);
 }

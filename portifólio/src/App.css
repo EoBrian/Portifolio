@@ -1,7 +1,14 @@
 .menu-app {
   min-height: 70px;
-  background-color: var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 2px solid var(--color-primary);
+  margin-bottom: 20px;
+}
+
+@media (max-width: 980px) {
+  .menu-app {
+    justify-content: space-around;
+  }
 }

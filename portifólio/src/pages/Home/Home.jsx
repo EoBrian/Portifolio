@@ -21,7 +21,7 @@ const Home = () => {
         <div>
           <div>
             <h2>Quem sou?</h2>
-            <p><em>Brian Ferreira</em> ! <strong>Desenvolvedor Front-End</strong> e mágico nas horas vagas! <br /> Me considero ágil e disposto a aprender sobre coisas novas</p>
+            <p><em>Brian Ferreira</em> ! <strong>Desenvolvedor Front-End</strong><br /> Me considero ágil e disposto a aprender coisas novas</p>
           </div>
 
           <div className="skills">
@@ -36,9 +36,13 @@ const Home = () => {
             </ul>
           </div>
           <div>
-            <h2>O que acha de trabalharmos juntos?</h2>
+            <h2>Vamos trabalhar juntos?</h2>
             <button className="btn" onClick={()=> navigate("/contact-me")}>Contate-me</button>
           </div>
+        </div>
+
+        <div className="animation">
+          <span className="circle"></span>
         </div>
       </div>
       

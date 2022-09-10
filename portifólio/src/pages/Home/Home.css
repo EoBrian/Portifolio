@@ -1,41 +1,80 @@
+.card {
+  position: relative;
+}
+
 .card h2 {
   padding: 20px;
   width: 90%;
   margin: 20px auto;
   border-radius: 10px;
-  opacity: 0.7;
 }
 
 .card .about-me h2 {
-  text-align: left;
-  margin-top: 50px;
-  background-image: linear-gradient(to left ,var(--color-primary) ,#fff);
+  margin-top: 30px;
+  background-color: var(--c-contrast);
 }
 
 .card .about-me {
+  text-align: center;
   display: flex;
-  background-image: linear-gradient(to top ,#fff ,var(--color-primary));
+  flex-direction:row-reverse;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .card .about-me figure {
-  padding: 20px;
-  max-width: 600px;
-  background-color: var(--color-primary);
+  max-width: 500px;
 }
 
-.card .about-me figure img {
-  opacity: 0.8;
-}
 
 .card .about-me figure, .card .about-me figure img {
-  border-radius: 10px 50% 50% 10px;
+  border-radius: 50%;
+}
+
+.card .about-me .skills ul{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  
+}
+
+.card .about-me .skills ul li {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px;
+  background-color: var(--color-secundary);
+}
+
+.animation {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  height: 50px;
+  width: 50px;
+  background-color: var(--c-contrast);
+  border-radius: 50%;
+  animation: BollUp 2s  infinite;
+}
+
+@keyframes BollUp {
+  0% {
+    
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+
+  }
 }
 
 @media (max-width: 980px) {
   .card .about-me{
+    
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+  }
+
+  .card .about-me h2 {
+    text-align: center;
   }
 }
