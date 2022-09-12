@@ -1,10 +1,11 @@
 import Loading from "../../components/Loading"
 import { useFetch } from "../../hooks/useFetch"
+import { useNavigate } from "react-router-dom"
 
-const url = "https://api.github.com/users/eoBrian/repos"
 
 const Projects = () => {
-  
+  const url = "https://api.github.com/users/eoBrian/repos"
+  const navigate = useNavigate()
   const {data, isLoading, error} = useFetch(url, "GET")
 
 
@@ -26,6 +27,9 @@ const Projects = () => {
           </li>
         ))
       }
+      <div>
+        <button onClick={()=> navigate("/admin")}>Admin</button>
+      </div>
     </ul>
   )
 }

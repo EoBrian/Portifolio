@@ -1,11 +1,13 @@
 import { useState } from "react"
 import { useAuthentication } from "../../hooks/useAuthentication"
+import { useNavigate } from "react-router-dom"
 
 import Loading from "../../components/Loading"
 import Error from "../../components/Error"
 
 
 const Admin = () => {
+  const navigate = useNavigate()
   const {setAuth, error, isLoading} = useAuthentication()
   const [email, setEmail] = useState(null)
   const [password, setPassword] = useState(null)
@@ -14,6 +16,7 @@ const Admin = () => {
     e.preventDefault()
     
     setAuth(email, password)
+    !error && useNavigate("/dashboard")
   }
 
   isLoading && <Loading/>

@@ -44,9 +44,8 @@ function App() {
             <Route path='/projects/:id' element={<Project/>} />
             <Route path='/dashboard' element={<DashBoard/>} />
             <Route path='/admin' element={<Admin/>} />
-            <Route path='*' element={<NotFound/>}/>
-
             {user && <Route path='/dashboard' element={<DashBoard/>}/>}
+            <Route path='*' element={<NotFound/>}/>            
           </Routes>
         </section>
       </Router>
