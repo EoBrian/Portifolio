@@ -45,8 +45,8 @@ function App() {
             <Route path='/dashboard' element={<DashBoard/>} />
             <Route path='/admin' element={<Admin/>} />
             <Route path='*' element={<NotFound/>}/>
-            
-            {user && <Route path='/dashboard'/>}
+
+            {user && <Route path='/dashboard' element={<DashBoard/>}/>}
           </Routes>
         </section>
       </Router>

@@ -8,7 +8,6 @@ export const useFetch = (url, state)=> {
   const [error, setError] = useState(null)
   const [data, setData] = useState(new Array())
 
-
   useEffect(()=> {
    
     async function getData(){
