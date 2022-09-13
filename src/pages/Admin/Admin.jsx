@@ -16,7 +16,7 @@ const Admin = () => {
     e.preventDefault()
     
     setAuth(email, password)
-    !error && useNavigate("/dashboard")
+    !error && useNavigate("/DashBoard")
   }
 
   isLoading && <Loading/>

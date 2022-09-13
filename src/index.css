@@ -63,6 +63,15 @@ a.active {
   flex-direction: column;
 }
 
+/*error*/
+.error-message {
+  background-color: #ff4365;
+  color: #ffc800;
+  padding: 20px;
+  font-size: 1.2em;
+  border-radius: 10px;
+}
+
 /*loading state*/
 
 .loading {
