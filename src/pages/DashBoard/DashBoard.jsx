@@ -1,25 +1,30 @@
+//hooks
 import { useState } from "react"
 import { useForm } from "react-hook-form"
-import Error from "../../components/Error"
-import Loading from "../../components/Loading"
 import { useStateContext } from "../../context/StateContext"
 import { useDataBase } from "../../hooks/useDataBase"
+import { useNavigate } from "react-router-dom"
+
+//components
+import Error from "../../components/Error"
+import Loading from "../../components/Loading"
+
 
 const DashBoard = () => {
-
+  const navigate = useNavigate()
   const {register, handleSubmit} = useForm()
   const {writeData} = useDataBase()
+
   const [imgArray, setImgArray] = useState(null)
-  
+  const {isLoading, error} = useStateContext()
 
   const onSubmit = (data)=> {
-    if (imgArray) {
-      data.imgs = imgArray.split(",")
-    }
-    writeData(data)
-  }
 
-  const {isLoading, error} = useStateContext()
+    data.imgs = imgArray.split(",")
+    
+    writeData(data)
+    !error && navigate("/projects")
+  }
 
   if (isLoading) {
     return <Loading/>

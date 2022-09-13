@@ -1,13 +1,19 @@
-import Loading from "../../components/Loading"
-import { useFetch } from "../../hooks/useFetch"
+//hooks
+import { useDataBase } from "../../hooks/useDataBase"
 import { useNavigate } from "react-router-dom"
+import { useStateContext } from "../../context/StateContext"
+
+//components
+import Loading from "../../components/Loading"
+import Error from "../../components/Error"
 
 
 const Projects = () => {
-  const url = "https://api.github.com/users/eoBrian/repos"
+  const {isLoading, error} = useStateContext()
   const navigate = useNavigate()
-  const {data, isLoading, error} = useFetch(url, "GET")
+  const {data} = useDataBase()
 
+  console.log(data)
 
   if (isLoading) {
     return <Loading />
@@ -15,18 +21,8 @@ const Projects = () => {
 
   return (
     <ul>
-      {
-        data && data.map((e)=> (
-          <li key={e.id}>
-            <h2>nome:{e.name}</h2>
-            <p>descrição: {e.description ? e.description : "sem descrição"}</p>
-            <p>Linguagens: </p>
-            <nav>
-              <a className="btn" target="_blank" href={e.html_url}>GitHub</a>
-            </nav>
-          </li>
-        ))
-      }
+      {error && <Error error={error}/>}
+      
       <div>
         <button onClick={()=> navigate("/admin")}>Admin</button>
       </div>
