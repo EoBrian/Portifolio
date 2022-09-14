@@ -3,18 +3,17 @@ import { database } from "../firebase/config"
 import { doc, setDoc, query, collection, onSnapshot, orderBy, Timestamp } from "firebase/firestore"
 
 //hooks
-import { useId } from "./useId"
 import { useStateContext } from "../context/StateContext"
 import { useState, useEffect } from "react"
 
 
-export const useDataBase = ()=> {
+export const useDataBase = (docName="projects")=> {
   const [cancelled, setCancelled] = useState(null)
   const [data, setData] = useState(null)
   const {setError, setIsLoading} = useStateContext()
-  const { id } = useId()
+ 
 
-  const collectionRef = collection(database, "projects")
+  const collectionRef = collection(database, docName)
 
   function checkIfIsCancelled(){
     if(!cancelled) {
@@ -28,15 +27,8 @@ export const useDataBase = ()=> {
     setIsLoading(true)
 
     try {
-      
       await setDoc(doc(collectionRef), {
-        title: data.title,
-        leg: data.leg,
-        git: data.git,
-        web: data.web,
-        imgs: data.imgs,
-        createdAt: Timestamp.now(),
-        id
+        createdAt: Timestamp.now(), ...data
       })
 
     } catch (error) {
