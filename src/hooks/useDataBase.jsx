@@ -1,6 +1,6 @@
 //firebase
 import { database } from "../firebase/config"
-import { ref, set, get, child, } from "firebase/database"
+import { doc, setDoc, query, collection, onSnapshot, orderBy, Timestamp } from "firebase/firestore"
 
 //hooks
 import { useId } from "./useId"
@@ -14,6 +14,7 @@ export const useDataBase = ()=> {
   const {setError, setIsLoading} = useStateContext()
   const { id } = useId()
 
+  const collectionRef = collection(database, "projects")
 
   function checkIfIsCancelled(){
     if(!cancelled) {
@@ -28,49 +29,34 @@ export const useDataBase = ()=> {
 
     try {
       
-      await set(ref(database, `projects/${id}`), {
+      await setDoc(doc(collectionRef), {
         title: data.title,
         leg: data.leg,
         git: data.git,
         web: data.web,
         imgs: data.imgs,
+        createdAt: Timestamp.now(),
         id
       })
 
     } catch (error) {
-      setError("Preencha corretamente o formulário!")
+      setError(error.message)
     } finally {
       setIsLoading(null)
     }
   }
-
+  
   useEffect(()=> {
     
-    const getData = async ()=> {
-      checkIfIsCancelled()
-      setError(null)
-      setIsLoading(true)
-  
-      const dbRef = ref(database)
-      await get(child(dbRef, "projects")).then((snapshot)=> {
-        if(snapshot.exists()) {
-          
-          setData(
-            snapshot.val()
-          )
-
-        }else {
-          setError("Nenhum dado encontrado!")
-        }
-      }).catch((error)=> setError(error.message))
-  
-      setIsLoading(null)
+    const getData = async()=> {
+      let q = await query(collectionRef, orderBy("createdAt", "desc"))
+      await onSnapshot(q, (querySnapshot)=> setData(
+        querySnapshot.docs.map((doc)=> ({id: doc.id, ...doc.data()}))
+      ))
     }
 
     getData()
-
   },[])
-
   
   useEffect(()=> {
     setCancelled(true)

@@ -18,10 +18,9 @@ const DashBoard = () => {
   const [imgArray, setImgArray] = useState(null)
   const {isLoading, error} = useStateContext()
 
-  const onSubmit = (data)=> {
 
+  const onSubmit = (data)=> {
     data.imgs = imgArray.split(",")
-    
     writeData(data)
     !error && navigate("/projects")
   }

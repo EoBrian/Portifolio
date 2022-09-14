@@ -1,0 +1,11 @@
+.project {
+  background-color: var(--color-secundary);
+  width: 50%;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.project figure {
+  padding: 20px;
+}
