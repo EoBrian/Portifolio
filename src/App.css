@@ -20,6 +20,12 @@
   margin-top: 20px;
 }
 
+textarea {
+  resize: vertical;
+  font-size: 1em;
+  font-family: "Oswald", sans-serif;
+  padding: 5px;
+}
 
 label {
   display: flex;
