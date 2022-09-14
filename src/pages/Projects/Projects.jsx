@@ -3,7 +3,6 @@ import "./Projects.css"
 
 //hooks
 import { useDataBase } from "../../hooks/useDataBase"
-import { useNavigate } from "react-router-dom"
 import { useStateContext } from "../../context/StateContext"
 
 //components
@@ -13,17 +12,15 @@ import Error from "../../components/Error"
 
 const Projects = () => {
   const {isLoading, error} = useStateContext()
-  const navigate = useNavigate()
-  const {data} = useDataBase()
 
-  console.log(data)
+  const {data} = useDataBase()
 
   if (isLoading) {
     return <Loading />
   }
 
   return (
-    <ul className="flex">
+    <ul className="flex box">
       {error && <Error error={error}/>}
       
       {
@@ -31,21 +28,18 @@ const Projects = () => {
           <li key={d.id} className="project">
             <h2 className="title">{d.title}</h2>
             <figure className="flex">
-              {d.imgs && d.imgs.map(img => <img src={img} width="100%" alt={d.title}/>)}
+              {d.imgs && d.imgs.map(img => <img src={img} alt={d.title}/>)}
             </figure>
             
             <p className="leg">{d.leg}</p>
             <nav className="nav-bar">
-              <a href={d.git} target="_bank">GitHub</a>
-              <a href={d.web} target="_bank">Web</a>
+              <a className="btn" href={d.git} target="_bank">GitHub</a>
+              <a className="btn" href={d.web} target="_bank">Web</a>
             </nav>
+            <div className="clear"></div>
           </li>
         ))
       }
-
-      <div>
-        <button onClick={()=> navigate("/admin")}>Admin</button>
-      </div>
     </ul>
   )
 }

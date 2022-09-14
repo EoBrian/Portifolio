@@ -72,6 +72,10 @@ a.active {
   border-radius: 10px;
 }
 
+.clear {
+  clear: both;
+}
+
 /*loading state*/
 
 .loading {
