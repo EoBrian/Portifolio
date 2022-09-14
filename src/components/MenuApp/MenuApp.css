@@ -8,8 +8,35 @@ nav a {
   border-radius: 10px;
 }
 
+
+/*nav-bar*/
+.menu-button {
+  float: right;
+}
+
 .logo {
   font-weight: 600;
   margin-left: 10px;
   color: var(--c-contrast);
+}
+
+/*colapse menu*/
+.toggle-menu {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  nav ul {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .menu-button {
+    display: none;
+  }
+
+  .toggle-menu {
+    display: flex;
+  }
 }

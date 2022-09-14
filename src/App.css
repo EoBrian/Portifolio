@@ -5,6 +5,7 @@
   justify-content: space-between;
   border-bottom: 2px solid var(--color-primary);
   margin-bottom: 20px;
+  
 }
 
 .container {
@@ -31,13 +32,15 @@ input {
 }
 
 
-@media (max-width: 980px) {
+@media (max-width: 900px) {
   label, .w-100, [type=submit], textarea {
     width: 90%;
   }
   
   .menu-app {
     justify-content: space-around;
+    align-items: flex-start;
+    padding: 10px;
   }
 }
 

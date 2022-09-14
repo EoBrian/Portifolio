@@ -2,9 +2,14 @@
 import "./MenuApp.css"
 import {Link, NavLink} from "react-router-dom"
 import { useAuthentication } from "../../hooks/useAuthentication"
+import { useState } from "react"
+
+//icon's
+import IconMenu from "../../assets/menu.svg"
+import CloseMenu from "../../assets/close.svg"
 
 const MenuApp = () => {
-
+  const [menu, setMenu] = useState(true)
   const {user} = useAuthentication()
 
   return (
@@ -12,7 +17,7 @@ const MenuApp = () => {
       <div>
         <Link className="logo" to="/">Portifólio</Link>
       </div>
-      <nav>
+      <nav className={menu ? "toggle-menu": undefined}>
         <ul className="flex">
           <li><NavLink to="/">Home</NavLink></li>
           <li><NavLink to="/projects">Projetos</NavLink></li>
@@ -20,6 +25,15 @@ const MenuApp = () => {
           {user && <li><NavLink to="/DashBoard">DashBoard</NavLink></li>}
         </ul>
       </nav>
+
+      {/* colapse menu */}
+      <div 
+        className="menu-button"
+        onClick={()=> menu? setMenu(false) : setMenu(true)}>
+
+        <img width={30} src={menu ? IconMenu : CloseMenu} alt="icone menu" />
+      </div>
+      
     </>
   )
 }
