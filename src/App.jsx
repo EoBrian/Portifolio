@@ -22,7 +22,7 @@ import Contact from './pages/Contact/Contact'
 import NotFound from './pages/NotFound'
 import Projects from './pages/Projects/Projects'
 import DashBoard from './pages/DashBoard/DashBoard'
-import Project from "./pages/Project/Project"
+
 
 
 function App() {
@@ -41,7 +41,6 @@ function App() {
             <Route path='/' element={<Home/>}/>
             <Route path='/contact-me' element={<Contact/>}/>
             <Route path='/projects' element={<Projects/>}/>
-            <Route path='/projects/:id' element={<Project/>} />
             <Route path='/dashboard' element={<DashBoard/>} />           
             {user && <Route path='/dashboard' element={<DashBoard/>}/>}
             <Route path='*' element={<NotFound/>}/>            

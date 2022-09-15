@@ -48,7 +48,7 @@ export const useDataBase = (docName="projects")=> {
     }
 
     getData()
-  },[])
+  },[docName])
   
   useEffect(()=> {
     setCancelled(true)
