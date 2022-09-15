@@ -37,11 +37,11 @@ nav ul a {
     justify-content: space-between;
   }
 
-  .menu-app, .toggle-menu ul {
+  .menu-app, .toggle-menu ul, .nav-bar ul {
     display: flex;
   }
 
-  .toggle-menu ul {
+  .toggle-menu ul, .nav-bar ul {
     position: absolute;
     right: 0;
     top: -8px;
@@ -51,7 +51,7 @@ nav ul a {
     display: none;
   }
 
-  .toggle-menu {
+  .toggle-menu, .nav-bar {
     display: block;
   }
 

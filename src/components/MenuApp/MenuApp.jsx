@@ -24,7 +24,7 @@ const MenuApp = () => {
       <div>
         <Link className="logo" to="/">Portifólio</Link>
       </div>
-      <nav className={menu ? "toggle-menu": undefined}>
+      <nav className={menu ? "toggle-menu": "nav-bar"}>
         <ul>
           <li><NavLink to="/">Home</NavLink></li>
           <li><NavLink to="/projects">Projetos</NavLink></li>
