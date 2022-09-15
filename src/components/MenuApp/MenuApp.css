@@ -2,12 +2,16 @@ a {
   font-size: 1.3em;
 }
 
-nav a {
+nav ul {
+  margin-top: 20px;
+}
+
+nav ul a {
   color: #fff;
   padding: 10px;
   border-radius: 10px;
+  display: block;
 }
-
 
 /*nav-bar*/
 .menu-button {
@@ -25,18 +29,30 @@ nav a {
   display: none;
 }
 
-@media screen and (max-width: 900px) {
-  nav ul {
-    flex-direction: column;
-  }
-}
 
 @media screen and (min-width: 900px) {
+
+  .menu-app {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .menu-app, .toggle-menu ul {
+    display: flex;
+  }
+
+  .toggle-menu ul {
+    position: absolute;
+    right: 0;
+    top: -8px;
+  }
+
   .menu-button {
     display: none;
   }
 
   .toggle-menu {
-    display: flex;
+    display: block;
   }
+
 }

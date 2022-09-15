@@ -1,11 +1,8 @@
 .menu-app {
   min-height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   border-bottom: 2px solid var(--color-primary);
   margin-bottom: 20px;
-  
+  padding: 10px;
 }
 
 .container {
@@ -41,12 +38,6 @@ input {
 @media (max-width: 900px) {
   label, .w-100, [type=submit], textarea {
     width: 90%;
-  }
-  
-  .menu-app {
-    justify-content: space-around;
-    align-items: flex-start;
-    padding: 10px;
   }
 }
 

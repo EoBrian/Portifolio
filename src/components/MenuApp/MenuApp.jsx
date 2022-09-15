@@ -14,25 +14,25 @@ const MenuApp = () => {
 
   return (
     <>
-      <div>
-        <Link className="logo" to="/">Portifólio</Link>
-      </div>
-      <nav className={menu ? "toggle-menu": undefined}>
-        <ul className="flex">
-          <li><NavLink to="/">Home</NavLink></li>
-          <li><NavLink to="/projects">Projetos</NavLink></li>
-          <li><NavLink to="/contact-me">Contato</NavLink></li>
-          {user && <li><NavLink to="/DashBoard">DashBoard</NavLink></li>}
-        </ul>
-      </nav>
-
-      {/* colapse menu */}
-      <div 
+     {/* colapse menu */}
+     <div 
         className="menu-button"
         onClick={()=> menu? setMenu(false) : setMenu(true)}>
 
         <img width={30} src={menu ? IconMenu : CloseMenu} alt="icone menu" />
       </div>
+      <div>
+        <Link className="logo" to="/">Portifólio</Link>
+      </div>
+      <nav className={menu ? "toggle-menu": undefined}>
+        <ul>
+          <li><NavLink to="/">Home</NavLink></li>
+          <li><NavLink to="/projects">Projetos</NavLink></li>
+          <li><NavLink to="/contact-me">Contato</NavLink></li>
+          {user && <li><NavLink to="/DashBoard">DashBoard</NavLink></li>}
+        </ul>
+      </nav> 
+      <div className="clear"></div>
       
     </>
   )
